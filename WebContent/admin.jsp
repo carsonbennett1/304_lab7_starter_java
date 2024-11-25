@@ -1,3 +1,4 @@
+<%@ page import="java.text.NumberFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,14 +16,17 @@ String user = (String)session.getAttribute("authenticatedUser");
 
 try{
     getConnection();
+
+    NumberFormat currFormat = NumberFormat.getCurrencyInstance();
+
     Statement stmt = con.createStatement();
 
-    String sql = "SELECT CONVERT (DATE,orderDate), SUM(totalAmount) FROM ordersummary GROUP BY CONVERT (DATE,orderDate) ORDER BY CONVERT (DATE,orderDate) ASC";
+    String sql = "SELECT CONVERT (DATE,orderDate), SUM(totalAmount) FROM ordersummary GROUP BY CONVERT (DATE,orderDate)";
     ResultSet rst = stmt.executeQuery(sql);
     out.println("<table><tr><th>Order Date</th><th>Total Order Amount</th></tr>");
     while(rst.next()){
         if(rst.getDate(1) != null){
-            out.println("<tr><td>" + rst.getDate(1) + "</td><td>" + rst.getInt(2) + "</td></tr>");
+            out.println("<tr><td>" + rst.getDate(1) + "</td><td align=\"center\">" + currFormat.format(rst.getBigDecimal(2)) + "</td></tr>");
         }
     }
 
