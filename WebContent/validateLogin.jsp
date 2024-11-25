@@ -31,20 +31,29 @@
 				return null;
 		if(username.equals("test") && password.equals("test"))
 			retStr = username;
-
 		if(retStr != null){
 			session.removeAttribute("loginMessage");
 			session.setAttribute("authenticatedUser",username);
 		}else
 			session.setAttribute("loginMessage", "Failed login.");
-		return retStr;
+		
+		if(retStr != null)return retStr;
 
 		try 
 		{
 			getConnection();
-			
+
 			// TODO: Check if userId and password match some customer account. If so, set retStr to be the username.
-			retStr = "";			
+			String sql = "SELECT * FROM customer WHERE userid = ? AND password = ?";
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, username);
+			pstmt.setString(2, password);
+			ResultSet rst = pstmt.executeQuery();
+			if(rst.next()){
+				retStr = username;
+			}
+			
+		
 		} 
 		catch (SQLException ex) {
 			out.println(ex);
