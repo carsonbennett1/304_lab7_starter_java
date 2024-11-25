@@ -62,8 +62,9 @@ try (Connection con = DriverManager.getConnection(url, uid, pw);
 
     // TODO: Retrieve any image stored directly in database. Note: Call displayImage.jsp with product id as parameter.
                 
-    // TODO: Add links to Add to Cart and Continue Shopping
+    
 
+    // TODO: Add links to Add to Cart and Continue Shopping
     out.println("<tr><td><h3><a href=\"addcart.jsp?id=" + id + "&name=" + rst.getString(1) + "&price=" + rst.getDouble(2) + "\">Add to Cart</a></h3></td></tr>");
     out.println("<tr><td><h3><a href=\"listorder.jsp\">Continue Shopping</a></h3></td></tr>");
     out.println("</table>");
