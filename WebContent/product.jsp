@@ -15,16 +15,34 @@
 <%
 
 String id = request.getParameter("id");
-
 int prodID = Integer.parseInt(id);
 
-String sql = "SELECT productName, productPrice FROM product WHERE productId = ?";
-PreparedStatement pstmt = con.prepareStatement(sql);
-pstmt.setInt(1, prodID);
-ResultSet rst = pstmt.executeQuery();
+try
+{	
+	Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+}
+catch (java.lang.ClassNotFoundException e)
+{
+	out.println("ClassNotFoundException: " +e);
+}
 
-rst.next();
-out.println("<table><tr><th>" + rst.getString(1) + "</th></tr>");
+final String url = "jdbc:sqlserver://cosc304_sqlserver:1433;DatabaseName=orders;TrustServerCertificate=True";
+final String uid = "sa";
+final String pw = "304#sa#pw";
+
+try (Connection con = DriverManager.getConnection(url, uid, pw);
+	Statement stmt = con.createStatement();)
+{
+    String sql = "SELECT productName, productPrice FROM product WHERE productId = ?";
+    PreparedStatement pstmt = con.prepareStatement(sql);
+    pstmt.setInt(1, prodID);
+    ResultSet rst = pstmt.executeQuery();
+
+    rst.next();
+    out.println("<table><tr><th>" + rst.getString(1) + "</th></tr>");
+}catch(SQLException ex){
+    out.println(ex);
+}
 
 
 // TODO: If there is a productImageURL, display using IMG tag

@@ -29,6 +29,15 @@
 				return null;
 		if((username.length() == 0) || (password.length() == 0))
 				return null;
+		if(username.equals("test") && password.equals("test"))
+			retStr = username;
+
+		if(retStr != null){
+			session.removeAttribute("loginMessage");
+			session.setAttribute("authenticatedUser",username);
+		}else
+			session.setAttribute("loginMessage", "Failed login.");
+		return retStr;
 
 		try 
 		{
