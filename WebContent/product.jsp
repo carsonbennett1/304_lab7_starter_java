@@ -5,7 +5,7 @@
 
 <html>
 <head>
-<title>Ray's Grocery - Product Information</title>
+<title>Grocery Store - Product Information</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -13,17 +13,26 @@
 <%@ include file="header.jsp" %>
 
 <%
-// Get product name to search for
-// TODO: Retrieve and display info for the product
-// String productId = request.getParameter("id");
 
-String sql = "";
+String id = request.getParameter("id");
+
+int prodID = Integer.parseInt(id);
+
+String sql = "SELECT productName, productPrice FROM product WHERE productId = ?";
+PreparedStatement pstmt = con.prepareStatement(sql);
+pstmt.setInt(1, prodID);
+ResultSet rst = pstmt.executeQuery();
+
+rst.next();
+out.println("<table><tr><th>" + rst.getString(1) + "</th></tr>");
+
 
 // TODO: If there is a productImageURL, display using IMG tag
 		
 // TODO: Retrieve any image stored directly in database. Note: Call displayImage.jsp with product id as parameter.
 		
 // TODO: Add links to Add to Cart and Continue Shopping
+
 %>
 
 </body>

@@ -64,7 +64,7 @@ try (Connection con = DriverManager.getConnection(url, uid, pw);
 		{
 			out.println("<tr><td><a href=\"addcart.jsp?id=" + rst.getString(1) + "&name=" + rst.getString(2) + "&price=" + rst.getDouble(3) + "\">Add to Cart</a></td>");
 			out.println("<td>" + rst.getString(1) + "</td>");
-			out.println("<td>" + rst.getString(2) + "</td>");
+			out.println("<td><a href=\"product.jsp?id=" + rst.getString(1) + "\">" + rst.getString(2) + "</a></td>");
 			out.println("<td>" + currFormat.format(rst.getDouble(3)) + "</td></tr>");
 		}while(rst.next());
 	}
