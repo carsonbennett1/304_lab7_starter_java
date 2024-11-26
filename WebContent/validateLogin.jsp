@@ -37,7 +37,6 @@
 		}else
 			session.setAttribute("loginMessage", "Failed login.");
 		
-		if(retStr != null)return retStr;
 
 		try 
 		{
