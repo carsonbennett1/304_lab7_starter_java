@@ -23,6 +23,7 @@ try{
 
 	// TODO: Check if valid order id in database
 	getConnection();
+	con.setAutocommit();
 
 	boolean shipmentFailed = false;
 
@@ -51,13 +52,16 @@ try{
 	out.println("</table>");
 	if(!shipmentFailed){
 		out.println("<h2>Shipment Successfully Processed!</h2>");
+		con.commit();
 	}else{
 		out.println("<h2>Shipment Failed. Insufficient Inventory for Product Id " + oid + "</h2>");
+		con.rollback();
 	}
 
 
 }catch(SQLException ex){
 	out.println(ex);
+	con.rollback();
 }
 
 
