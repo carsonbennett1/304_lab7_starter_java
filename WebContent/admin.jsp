@@ -21,7 +21,7 @@ try{
 
     Statement stmt = con.createStatement();
 
-    String sql = "SELECT orderDate, SUM(totalAmount) FROM ordersummary GROUP BY orderDate";
+    String sql = "SELECT CONVERT (DATE, orderDate), SUM(totalAmount) FROM ordersummary GROUP BY CONVERT (DATE, orderDate)";
     ResultSet rst = stmt.executeQuery(sql);
     out.println("<table><tr><th>Order Date</th><th>Total Order Amount</th></tr>");
     while(rst.next()){

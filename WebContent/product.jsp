@@ -18,11 +18,13 @@
 String id = request.getParameter("id");
 int prodID = Integer.parseInt(id);
 
-try {
-    getConnection();
+final String url = "jdbc:sqlserver://cosc304_sqlserver:1433;DatabaseName=orders;TrustServerCertificate=True";
+final String uid = "sa";
+final String pw = "304#sa#pw";
 
-    NumberFormat currFormat = NumberFormat.getCurrencyInstance();
-
+try (Connection con = DriverManager.getConnection(url, uid, pw);
+	Statement stmt = con.createStatement();)
+{
     String sql = "SELECT productName, productPrice FROM product WHERE productId = ?";
     PreparedStatement pstmt = con.prepareStatement(sql);
     pstmt.setInt(1, prodID);
@@ -32,11 +34,12 @@ try {
 
     // TODO: If there is a productImageURL, display using IMG tag
 
-    try (Connection con2 = DriverManager.getConnection(url, uid, pw);
-    Statement stmt2 = con2.createStatement();)
+    try 
     {
+        getConnection();
+
         String sqlCheckIMG = "SELECT productImageURL FROM product WHERE productId = ?";
-        PreparedStatement pstmt2 = con2.prepareStatement(sqlCheckIMG);
+        PreparedStatement pstmt2 = con.prepareStatement(sqlCheckIMG);
         pstmt2.setInt(1, prodID);
         ResultSet rst2 = pstmt2.executeQuery();
         
@@ -49,7 +52,7 @@ try {
     }
 
     out.println("<tr><th>Id:" + id + "</th></tr>");
-    out.println("<tr><th>Price:" + currformat.Format(rst.getBigDecimal(2)) + "</th></tr>");
+    out.println("<tr><th>Price:" + rst.getString(2) + "</th></tr>");
 
     // TODO: Add links to Add to Cart and Continue Shopping
     out.println("<tr><td><h3><a href=\"addcart.jsp?id=" + id + "&name=" + rst.getString(1) + "&price=" + rst.getDouble(2) + "\">Add to Cart</a></h3></td></tr>");

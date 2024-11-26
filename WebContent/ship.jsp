@@ -24,34 +24,43 @@ try{
 	// TODO: Check if valid order id in database
 	getConnection();
 
-	String sql = "SELECT * FROM OrderProduct WHERE orderId = ?";
+	boolean shipmentFailed = false;
+
+	String sql = "SELECT orderProduct.orderId, orderProduct.productId, orderProduct.quantity, productInventory.quantity FROM orderProduct JOIN productInventory ON orderProduct.productId = productInventory.productId WHERE orderProduct.orderId = ? AND productInventory.warehouseId = 1";
 	PreparedStatement pstmt = con.prepareStatement(sql);
 	pstmt.setString(1, ordId);
+	ResultSet rst = pstmt.executeQuery();
 
-	
+	int oid = 0;
+
+	out.println("<table>");
+	while(rst.next()){
+		oid = rst.getInt(1);
+		int orderQuantity = rst.getInt(3);
+		int warehouseQuantity = rst.getInt(4);
+		int remaining = warehouseQuantity - orderQuantity;
+
+		out.println("<tr><th>Ordered Product</th><td>" + rst.getString(1) + "</td><th>Qty</th><td>" + orderQuantity + "</td><th>Previous Inventory</th><td>" + warehouseQuantity + "</td><th>New Inventory</th><td>" + remaining + "</td></tr>");
+
+		if(remaining < 0){
+			shipmentFailed = true;
+		}
+
+	}
+
+	out.println("</table>");
+	if(!shipmentFailed){
+		out.println("<h2>Shipment Successfully Processed!</h2>");
+	}else{
+		out.println("<h2>Shipment Failed. Insufficient Inventory for Product Id " + oid + "</h2>");
+	}
 
 
 }catch(SQLException ex){
 	out.println(ex);
 }
 
-try{
 
-	// TODO: Start a transaction (turn-off auto-commit)
-	// TODO: Retrieve all items in order with given id
-	
-	getConnection();
-
-
-}catch(SQLException ex){
-	out.println(ex);
-}
-
-	// TODO: Create a new shipment record.
-	// TODO: For each item verify sufficient quantity available in warehouse 1.
-	// TODO: If any item does not have sufficient inventory, cancel transaction and rollback. Otherwise, update inventory for each item.
-	
-	// TODO: Auto-commit should be turned back on
 %>                       				
 
 <h2><a href="shop.html">Back to Main Page</a></h2>
