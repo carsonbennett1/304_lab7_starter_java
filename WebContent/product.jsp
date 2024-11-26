@@ -32,8 +32,6 @@ try (Connection con = DriverManager.getConnection(url, uid, pw);
     rst.next();
     out.println("<table><tr><th><h3>" + rst.getString(1) + "</h3></th></tr>");
 
-    // TODO: If there is a productImageURL, display using IMG tag
-
     try 
     {
         getConnection();
@@ -53,8 +51,7 @@ try (Connection con = DriverManager.getConnection(url, uid, pw);
 
     out.println("<tr><th>Id:" + id + "</th></tr>");
     out.println("<tr><th>Price:" + rst.getString(2) + "</th></tr>");
-
-    // TODO: Add links to Add to Cart and Continue Shopping
+    
     out.println("<tr><td><h3><a href=\"addcart.jsp?id=" + id + "&name=" + rst.getString(1) + "&price=" + rst.getDouble(2) + "\">Add to Cart</a></h3></td></tr>");
     out.println("<tr><td><h3><a href=\"listorder.jsp\">Continue Shopping</a></h3></td></tr>");
     out.println("</table>");
@@ -63,7 +60,6 @@ try (Connection con = DriverManager.getConnection(url, uid, pw);
     out.println(ex);
 }    
     
-
 
 %>
 
