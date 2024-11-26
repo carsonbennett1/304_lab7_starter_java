@@ -18,22 +18,11 @@
 String id = request.getParameter("id");
 int prodID = Integer.parseInt(id);
 
-try
-{	
-	Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-}
-catch (java.lang.ClassNotFoundException e)
-{
-	out.println("ClassNotFoundException: " +e);
-}
+try {
+    getConnection();
 
-final String url = "jdbc:sqlserver://cosc304_sqlserver:1433;DatabaseName=orders;TrustServerCertificate=True";
-final String uid = "sa";
-final String pw = "304#sa#pw";
+    NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
-try (Connection con = DriverManager.getConnection(url, uid, pw);
-	Statement stmt = con.createStatement();)
-{
     String sql = "SELECT productName, productPrice FROM product WHERE productId = ?";
     PreparedStatement pstmt = con.prepareStatement(sql);
     pstmt.setInt(1, prodID);
@@ -56,15 +45,11 @@ try (Connection con = DriverManager.getConnection(url, uid, pw);
 
         
     }catch(SQLException ex){
-        out.println("Missing imageURL: " + ex);
+        out.println(ex);
     }
 
     out.println("<tr><th>Id:" + id + "</th></tr>");
-    out.println("<tr><th>Price:" + rst.getString(2) + "</th></tr>");
-
-    // TODO: Retrieve any image stored directly in database. Note: Call displayImage.jsp with product id as parameter.
-
-    String image = (String)session.getAttribute("ostream.write(data, 0, count)");
+    out.println("<tr><th>Price:" + currformat.Format(rst.getBigDecimal(2)) + "</th></tr>");
 
     // TODO: Add links to Add to Cart and Continue Shopping
     out.println("<tr><td><h3><a href=\"addcart.jsp?id=" + id + "&name=" + rst.getString(1) + "&price=" + rst.getDouble(2) + "\">Add to Cart</a></h3></td></tr>");

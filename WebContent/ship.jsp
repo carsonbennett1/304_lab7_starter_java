@@ -28,6 +28,8 @@ try{
 	PreparedStatement pstmt = con.prepareStatement(sql);
 	pstmt.setString(1, ordId);
 
+	
+
 
 }catch(SQLException ex){
 	out.println(ex);
