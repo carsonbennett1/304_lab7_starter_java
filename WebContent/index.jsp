@@ -16,11 +16,9 @@
 
 <h2 align="center"><a href="admin.jsp">Administrators</a></h2>
 
+<h2 align="center"><a href="warehouse.jsp">Warehouse Info</a></h2>
+
 <h2 align="center"><a href="logout.jsp">Log out</a></h2>
-
-<h4 align="center"><a href="ship.jsp?orderId=1">Test Ship orderId=1</a></h4>
-
-<h4 align="center"><a href="ship.jsp?orderId=3">Test Ship orderId=3</a></h4>
 
 <%
 	String userName = (String) session.getAttribute("authenticatedUser");
