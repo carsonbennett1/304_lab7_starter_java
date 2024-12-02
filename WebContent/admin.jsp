@@ -1,4 +1,3 @@
-<%@ page import="java.text.NumberFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,39 +5,50 @@
 </head>
 <body>
 
-<h2>Administrator Sales Report by Day</h2>
-
 <%@ include file="auth.jsp"%>
-<%@ include file="jdbc.jsp"%>
+<%@ page import="java.text.NumberFormat" %>
+<%@ include file="jdbc.jsp" %>
 
 <%
-String user = (String)session.getAttribute("authenticatedUser");
+	String userName = (String) session.getAttribute("authenticatedUser");
+%>
 
-try{
-    getConnection();
+<%
 
-    NumberFormat currFormat = NumberFormat.getCurrencyInstance();
+// Print out total order amount by day
+String sql = "select year(orderDate), month(orderDate), day(orderDate), SUM(totalAmount) FROM OrderSummary GROUP BY year(orderDate), month(orderDate), day(orderDate)";
 
-    Statement stmt = con.createStatement();
+NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
-    String sql = "SELECT CONVERT (DATE, orderDate), SUM(totalAmount) FROM ordersummary GROUP BY CONVERT (DATE, orderDate)";
-    ResultSet rst = stmt.executeQuery(sql);
-    out.println("<table><tr><th>Order Date</th><th>Total Order Amount</th></tr>");
-    while(rst.next()){
-        if(rst.getDate(1) != null){
-            out.println("<tr><td>" + rst.getDate(1) + "</td><td align=\"center\">" + currFormat.format(rst.getBigDecimal(2)) + "</td></tr>");
-        }
-    }
+try 
+{	
+	out.println("<h3>Administrator Sales Report by Day</h3>");
+	
+	getConnection();
+	Statement stmt = con.createStatement(); 
+	stmt.execute("USE orders");
 
+	ResultSet rst = con.createStatement().executeQuery(sql);		
+	out.println("<table class=\"table\" border=\"1\">");
+	out.println("<tr><th>Order Date</th><th>Total Order Amount</th>");	
 
-}catch(SQLException ex){
-    out.println(ex);
-}finally{
-    closeConnection();
+	while (rst.next())
+	{
+		out.println("<tr><td>"+rst.getString(1)+"-"+rst.getString(2)+"-"+rst.getString(3)+"</td><td>"+currFormat.format(rst.getDouble(4))+"</td></tr>");
+	}
+	out.println("</table>");		
 }
-
+catch (SQLException ex) 
+{ 	out.println(ex); 
+}
+finally
+{	
+	closeConnection();	
+}
 %>
 
 </body>
 </html>
+
+
 
