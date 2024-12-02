@@ -5,62 +5,70 @@
 
 <html>
 <head>
-<title>Grocery Store - Product Information</title>
+<title>Ray's Grocery - Product Information</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
 <%@ include file="header.jsp" %>
-<%@ include file="displayImage.jsp"%>
 
 <%
+// Get product name to search for
+String productId = request.getParameter("id");
 
-String id = request.getParameter("id");
-int prodID = Integer.parseInt(id);
+String sql = "SELECT productId, productName, productPrice, productImageURL, productImage FROM Product P  WHERE productId = ?";
 
-final String url = "jdbc:sqlserver://cosc304_sqlserver:1433;DatabaseName=orders;TrustServerCertificate=True";
-final String uid = "sa";
-final String pw = "304#sa#pw";
+NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
-try (Connection con = DriverManager.getConnection(url, uid, pw);
-	Statement stmt = con.createStatement();)
+try 
 {
-    String sql = "SELECT productName, productPrice FROM product WHERE productId = ?";
-    PreparedStatement pstmt = con.prepareStatement(sql);
-    pstmt.setInt(1, prodID);
-    ResultSet rst = pstmt.executeQuery();
-    rst.next();
-    out.println("<table><tr><th><h3>" + rst.getString(1) + "</h3></th></tr>");
+	getConnection();
+	Statement stmt = con.createStatement(); 			
+	stmt.execute("USE orders");
+	
+	PreparedStatement pstmt = con.prepareStatement(sql);
+	pstmt.setInt(1, Integer.parseInt(productId));			
+	
+	ResultSet rst = pstmt.executeQuery();
+			
+	if (!rst.next())
+	{
+		out.println("Invalid product");
+	}
+	else
+	{		
+		out.println("<h2>"+rst.getString(2)+"</h2>");
+		
+		int prodId = rst.getInt(1);
+		out.println("<table><tr>");
+		out.println("<th>Id</th><td>" + prodId + "</td></tr>"				
+				+ "<tr><th>Price</th><td>" + currFormat.format(rst.getDouble(3)) + "</td></tr>");
+		
+		//  Retrieve any image with a URL
+		String imageLoc = rst.getString(4);
+		if (imageLoc != null)
+			out.println("<img src=\""+imageLoc+"\">");
+		
+		// Retrieve any image stored directly in database
+		String imageBinary = rst.getString(5);
+		if (imageBinary != null)
+			out.println("<img src=\"displayImage.jsp?id="+prodId+"\">");	
+		out.println("</table>");
+		
 
-    try 
-    {
-        getConnection();
-
-        String sqlCheckIMG = "SELECT productImageURL FROM product WHERE productId = ?";
-        PreparedStatement pstmt2 = con.prepareStatement(sqlCheckIMG);
-        pstmt2.setInt(1, prodID);
-        ResultSet rst2 = pstmt2.executeQuery();
-        
-        rst2.next();
-        out.println("<tr><th><img src=\"" + rst2.getString(1) + "\"></th></tr>");
-
-        
-    }catch(SQLException ex){
-        out.println(ex);
-    }
-
-    out.println("<tr><th>Id:" + id + "</th></tr>");
-    out.println("<tr><th>Price:" + rst.getString(2) + "</th></tr>");
-    
-    out.println("<tr><td><h3><a href=\"addcart.jsp?id=" + id + "&name=" + rst.getString(1) + "&price=" + rst.getDouble(2) + "\">Add to Cart</a></h3></td></tr>");
-    out.println("<tr><td><h3><a href=\"listorder.jsp\">Continue Shopping</a></h3></td></tr>");
-    out.println("</table>");
-
-}catch(SQLException ex){
-    out.println(ex);
-}    
-    
-
+		out.println("<h3><a href=\"addcart.jsp?id="+prodId+ "&name=" + rst.getString(2)
+								+ "&price=" + rst.getDouble(3)+"\">Add to Cart</a></h3>");		
+		
+		out.println("<h3><a href=\"listprod.jsp\">Continue Shopping</a>");
+	}
+} 
+catch (SQLException ex) {
+	out.println(ex);
+}
+finally
+{
+	closeConnection();
+}
 %>
 
 </body>
