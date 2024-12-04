@@ -134,11 +134,11 @@ try
 
 		Double price = rst.getDouble(3);
 		Double oldPrice = price + 2.00;
-// Adding the 'Original Price' column and strikethrough was coded with the assistance of Copilot AI
-out.println("<td><a href=\"product.jsp?id="+id+"\"<font color=\"" + color + "\">" + rst.getString(2) + "</font></td>"
-        + "<td><font color=\"" + color + "\">" + itemCategory + "</font></td>"
-        + "<td><font color=\"" + color + "\">" + currFormat.format(price) + "</font></td>"
-        + "<td><font color=\"" + color + "\"><s>" + currFormat.format(oldPrice) + "</s></font></td></tr>");
+		// Adding the 'Original Price' column and strikethrough was coded with the assistance of Copilot AI
+		out.println("<td><a href=\"product.jsp?id="+id+"\"<font color=\"" + color + "\">" + rst.getString(2) + "</font></td>"
+			+ "<td><font color=\"" + color + "\">" + itemCategory + "</font></td>"
+			+ "<td><font color=\"" + color + "\">" + currFormat.format(price) + "</font></td>"
+			+ "<td><font color=\"" + color + "\"><s>" + currFormat.format(oldPrice) + "</s></font></td></tr>");
 	}
 	out.println("</table></font>");
 	closeConnection();

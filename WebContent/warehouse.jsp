@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Warehouse</title>
+<title>Super Save Warehouse</title>
 
 <%-- Stylesheet section coded with the assistance of Copilot AI https://m365.cloud.microsoft/chat?auth=2 --%>
 <style>

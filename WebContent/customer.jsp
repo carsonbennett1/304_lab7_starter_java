@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Customer Page</title>
+<title>Super Save Customer Page</title>
 </head>
 <body>
 
