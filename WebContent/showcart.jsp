@@ -12,13 +12,24 @@
 </head>
 <body>
 
+<%@ include file="header.jsp" %>
+
 <%
+
+// Clear shopping cart coded with the assistance of Copilot AI
+// Check if the clear cart button was clicked
+String clearCart = request.getParameter("clearCart");
+if ("true".equals(clearCart)) {
+    session.setAttribute("productList", null);
+    out.println("<H1>Your shopping cart has been cleared!</H1>");
+}
+
 // Get the current list of products
 @SuppressWarnings({"unchecked"})
 HashMap<String, ArrayList<Object>> productList = (HashMap<String, ArrayList<Object>>) session.getAttribute("productList");
 
 if (productList == null)
-{	out.println("<H1>Your shopping cart is empty!</H1>");
+{	out.println("<H3>Your shopping cart is empty!</H3>");
 	productList = new HashMap<String, ArrayList<Object>>();
 }
 else
@@ -78,7 +89,12 @@ else
 	out.println("<h2><a href=\"checkout.jsp\">Check Out</a></h2>");
 }
 %>
-<h2><a href="listprod.jsp">Continue Shopping</a></h2>
+<!-- Clear cart button coded with the assistance of Copilot AI-->
+<form action="showcart.jsp" method="post">
+    <input type="hidden" name="clearCart" value="true">
+    <input type="submit" value="Clear Cart">
+</form>
+<h2><a href="index.jsp">Return Home</a></h2>
 </body>
 </html> 
 
