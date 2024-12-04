@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>Grocery Main Page</title>
+        <title>Super Save Home</title>
 </head>
 <body>
-<h1 align="center">Welcome to Ray's Grocery</h1>
+<h1 align="center">Welcome to Super Save Grocery</h1>
 
 <h2 align="center"><a href="login.jsp">Login</a></h2>
 

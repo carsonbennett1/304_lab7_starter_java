@@ -5,7 +5,7 @@
 
 <html>
 <head>
-<title>Ray's Grocery</title>
+<title>Super Save Grocery</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -120,7 +120,7 @@ try
 	ResultSet rst = pstmt.executeQuery();
 	
 	out.print("<font face=\"Century Gothic\" size=\"2\"><table class=\"table\" border=\"1\"><tr><th class=\"col-md-1\"></th><th>Product Name</th>");
-	out.println("<th>Category</th><th>Price</th></tr>");
+	out.println("<th>Category</th><th>Price</th><th>Original Price</th></tr>");
 	while (rst.next()) 
 	{
 		int id = rst.getInt(1);
@@ -132,10 +132,13 @@ try
 		if (color == null)
 			color = "#FFFFFF";
 
-		out.println("<td><a href=\"product.jsp?id="+id+"\"<font color=\"" + color + "\">" + rst.getString(2) + "</font></td>"
-				+ "<td><font color=\"" + color + "\">" + itemCategory + "</font></td>"
-				+ "<td><font color=\"" + color + "\">" + currFormat.format(rst.getDouble(3))
-				+ "</font></td></tr>");
+		Double price = rst.getDouble(3);
+		Double oldPrice = price + 2.00;
+// Adding the 'Original Price' column and strikethrough was coded with the assistance of Copilot AI
+out.println("<td><a href=\"product.jsp?id="+id+"\"<font color=\"" + color + "\">" + rst.getString(2) + "</font></td>"
+        + "<td><font color=\"" + color + "\">" + itemCategory + "</font></td>"
+        + "<td><font color=\"" + color + "\">" + currFormat.format(price) + "</font></td>"
+        + "<td><font color=\"" + color + "\"><s>" + currFormat.format(oldPrice) + "</s></font></td></tr>");
 	}
 	out.println("</table></font>");
 	closeConnection();
