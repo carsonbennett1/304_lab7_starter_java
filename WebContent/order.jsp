@@ -15,13 +15,21 @@
 <body>
 
 <% 
-// Get customer id
+// Get customer id, paymentType, and paymentNumber
 String custId = request.getParameter("customerId");
+String type = request.getParameter("paymentType");
+String typeNumberStr = request.getParameter("paymentNumber");
+
+
 @SuppressWarnings({"unchecked"})
 HashMap<String, ArrayList<Object>> productList = (HashMap<String, ArrayList<Object>>) session.getAttribute("productList");
 
 if (custId == null || custId.equals(""))
 	out.println("<h1>Invalid customer id.  Go back to the previous page and try again.</h1>");
+else if (!type.equals("Credit") && !type.equals("Debit") && !type.equals("Prepaid"))
+	out.println("<h1>Invalid Payment Type.  Go back to the previous page and try again.</h1>");
+else if (typeNumberStr.length() != 16)
+	out.println("<h1>Invalid Number on Card - Must be 16 characters long!  Go back to the previous page and try again.</h1>");
 else if (productList == null)
 	out.println("<h1>Your shopping cart is empty!</h1>");
 else
