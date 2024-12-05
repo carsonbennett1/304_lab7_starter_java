@@ -11,10 +11,6 @@
 <%@ include file="jdbc.jsp" %>
 
 <%
-	String userName = (String) session.getAttribute("authenticatedUser");
-%>
-
-<%
 
 // Print out total order amount by day
 String sql = "select year(orderDate), month(orderDate), day(orderDate), SUM(totalAmount) FROM OrderSummary GROUP BY year(orderDate), month(orderDate), day(orderDate)";
