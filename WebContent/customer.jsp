@@ -55,6 +55,8 @@ finally
 }
 %>
 
+<h3><a href="changePass.jsp">Change Password</a></h3>
+
 </body>
 </html>
 
