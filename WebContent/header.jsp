@@ -6,5 +6,7 @@
     </H1>
     <!-- Added smaller link to the right of the H1 -->
     <a href="customer.jsp" style="margin-left: 75px; margin-top: 10px;">My Account</a>
+    <a href="login.jsp" style="margin-left: 77px; margin-top: 10px;">Login</a>
+    <a href="logout.jsp" style="margin-left: 79px; margin-top: 10px;">Logout</a>
 </div>
 <hr>

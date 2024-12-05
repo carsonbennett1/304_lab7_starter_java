@@ -7,6 +7,7 @@
 
 <%@ include file="auth.jsp"%>
 <%@ page import="java.text.NumberFormat" %>
+<%@ include file="header.jsp" %>
 <%@ include file="jdbc.jsp" %>
 
 <%

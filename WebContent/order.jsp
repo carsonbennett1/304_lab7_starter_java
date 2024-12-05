@@ -14,6 +14,8 @@
 </head>
 <body>
 
+<%@ include file="header.jsp" %>
+
 <% 
 // Get customer id, paymentType, and paymentNumber
 String custId = request.getParameter("customerId");

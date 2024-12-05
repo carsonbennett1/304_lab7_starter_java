@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<%@ include file="header.jsp" %>
+
 <%
 out.print("<h1>Connecting to database.</h1><br><br>");
 

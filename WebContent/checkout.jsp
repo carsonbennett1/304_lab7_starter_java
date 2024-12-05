@@ -5,6 +5,8 @@
 </head>
 <body>
 
+<%@ include file="header.jsp" %>
+
 <h1>Enter Your Customer Details to Complete the Transaction:</h1>
 
 <!-- Styling and Line Breaks Coded With the Assistance of Copilot AI-->
