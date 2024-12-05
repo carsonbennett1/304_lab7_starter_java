@@ -11,10 +11,6 @@
 <%@ include file="jdbc.jsp" %>
 
 <%
-	String userName = (String) session.getAttribute("authenticatedUser");
-%>
-
-<%
 
 // Print Customer information
 String sql = "select customerId, firstName, lastName, email, phonenum, address, city, state, postalCode, country, userid, password FROM Customer WHERE userid = ?";
