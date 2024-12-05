@@ -86,15 +86,17 @@ else
 			+"<td align=\"right\">"+currFormat.format(total)+"</td></tr>");
 	out.println("</table>");
 
-	out.println("<h2><a href=\"checkout.jsp\">Check Out</a></h2>");
+	out.println("<h3><a href=\"checkout.jsp\">Check Out</a></h3>");
 }
 %>
+
+<h3><a href="listprod.jsp">Return to Shopping Section</a></h3>
+
 <!-- Clear cart button coded with the assistance of Copilot AI-->
 <form action="showcart.jsp" method="post">
     <input type="hidden" name="clearCart" value="true">
     <input type="submit" value="Clear Cart">
 </form>
-<h2><a href="index.jsp">Return Home</a></h2>
 </body>
 </html> 
 

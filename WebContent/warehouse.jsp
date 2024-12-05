@@ -33,10 +33,6 @@
 <%@ include file="jdbc.jsp" %>
 
 <%
-	String userName = (String) session.getAttribute("authenticatedUser");
-%>
-
-<%
 out.println("<h2>Warehouse Storage Information Page</h2>");
 String sql = "SELECT P.productName, P.productId, PI.quantity FROM product P, productInventory PI WHERE P.productId = PI.productId";
 

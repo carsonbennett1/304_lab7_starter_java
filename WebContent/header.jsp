@@ -12,6 +12,7 @@
         <span style="margin-left: 75px; margin-top: 10px;">User: <%= userName %></span>
         <a href="customer.jsp" style="margin-left: 75px; margin-top: 10px;">My Account</a>
         <a href="logout.jsp" style="margin-left: 77px; margin-top: 10px;">Logout</a>
+        <a href="showcart.jsp" style="margin-left: 79px; margin-top: 10px;">My Cart</a>
     <%
         } else {
     %>
