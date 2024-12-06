@@ -120,7 +120,7 @@ try
 	ResultSet rst = pstmt.executeQuery();
 	
 	out.print("<font face=\"Century Gothic\" size=\"2\"><table class=\"table\" border=\"1\"><tr><th class=\"col-md-1\"></th><th>Product Name</th>");
-	out.println("<th>Category</th><th>Price</th><th>Original Price</th></tr>");
+	out.println("<th>Category</th><th>Our Price</th><th>Original Price</th></tr>");
 	while (rst.next()) 
 	{
 		int id = rst.getInt(1);
@@ -132,8 +132,10 @@ try
 		if (color == null)
 			color = "#FFFFFF";
 
+		// Incorporating Math.random() into oldPrice was done with the assistance of Copilot AI
 		Double price = rst.getDouble(3);
-		Double oldPrice = price + 2.00;
+		Double oldPrice = (1 + (Math.random() * 2)) + price;
+		
 		// Adding the 'Original Price' column and strikethrough was coded with the assistance of Copilot AI
 		out.println("<td><a href=\"product.jsp?id="+id+"\"<font color=\"" + color + "\">" + rst.getString(2) + "</font></td>"
 			+ "<td><font color=\"" + color + "\">" + itemCategory + "</font></td>"
