@@ -1,5 +1,20 @@
 <!DOCTYPE html>
 <html>
+<!--Background Image code link: https://stackoverflow.com/questions/35240758/adding-image-as-a-background-in-jsp -->
+<!-- H1 and H2 style coded by Copilot AI-->
+<style>
+body {
+	background-image: url("img/background.jpg");
+}
+h1, h2 {
+            border: 2px solid #000; /* Black border */
+            padding: 10px; /* Space inside the border */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            text-align: center; /* Center align text */
+            margin: 20px auto; /* Center align the box */
+            width: fit-content; /* Adjust width to fit content */
+        }
+</style>
 <head>
         <title>Super Save Home</title>
 </head>

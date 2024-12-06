@@ -38,12 +38,6 @@ try
 	}
 	out.println("</table>");
 
-	
-	out.println("<h3>Sales Report by Day Bar Graph</h3>");
-	
-	// Bar graph created, and printed out, with the assistance of Copilot AI
-	out.println("<img src=\"img/daily_purchases.png\" alt=\"Daily Purchases Bar Chart\" />");
-
 }
 catch (SQLException ex) 
 { 	out.println(ex); 
@@ -73,6 +67,11 @@ try{
 		out.println("<td>"+rst.getString(6)+"</td></tr>");
 	}
 	out.println("</table>");
+
+	out.println("<h3>Sales Report by Day Bar Graph</h3>");
+
+	// Bar graph created, and printed out, with the assistance of Copilot AI
+	out.println("<img src=\"img/daily_purchases.png\" alt=\"Daily Purchases Bar Chart\" />");
 
 }catch (SQLException ex) { 	
 	out.println(ex); 
