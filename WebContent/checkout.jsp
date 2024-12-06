@@ -16,7 +16,7 @@
 <h3>Payment Type (Debit, Credit, Prepaid)</h3>
 <input type="text" name="paymentType" size="50" style="margin-bottom: 10px;"><br>
 <h3>Payment Number (NO SPACES) [Ex: 0123456789100000]</h3>
-<input type="number" name="paymentNumber" size="25" style="margin-bottom: 10px;"><br>
+<input type="text" name="paymentNumber" size="35" style="margin-bottom: 10px;"><br>
 
 <input type="submit" value="Submit"><input type="reset" value="Reset">
 </form>

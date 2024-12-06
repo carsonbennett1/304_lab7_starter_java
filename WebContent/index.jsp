@@ -19,7 +19,7 @@ h1, h2 {
         <title>Super Save Home</title>
 </head>
 <body>
-<h1 align="center">Welcome to Super Save Grocery</h1>
+<h1 align="center">Welcome to Super Save Grocery!</h1>
 
 <h2 align="center"><a href="listprod.jsp">Go Shopping</a></h2>
 

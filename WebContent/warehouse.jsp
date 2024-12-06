@@ -66,7 +66,6 @@ try{
     }
 
     out.println("</table>");
-    out.println("<h2><a href=\"index.jsp\">Return to Homepage</a></h2>");
 
 }
 catch (SQLException ex) {
