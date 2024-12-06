@@ -34,6 +34,7 @@ if (productList == null)
 }
 else
 {
+	//productList.remove(custId)
 	NumberFormat currFormat = NumberFormat.getCurrencyInstance(Locale.US);
 
 	out.println("<h1>Your Shopping Cart</h1>");

@@ -12,14 +12,18 @@
             var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
             var phonePattern = /^\d{10}$/;
             var postalCodePattern = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/; // Canadian postal code pattern
-            // var state_province_pattern = 
+            var state_province_pattern = /^[A-Z]{2}$/;
 
             if (!emailPattern.test(email)) {
                 alert("Please enter a valid email address. \nEx: someone@something.com");
                 return false;
             }
             if (!phonePattern.test(phonenum)) {
-                alert("Please enter a valid 10-digit phone number.\nEx: NO spaces OR dashes");
+                alert("Please enter a valid 10-digit phone number.\nNO spaces OR dashes\nEx: 7013331355");
+                return false;
+            }
+            if(!state_province_pattern.test(state_province)){
+                alert("Please enter a two charcter state/province.\nEx: AB, MB, MT, NY");
                 return false;
             }
             if (!postalCodePattern.test(postalCode)) {
