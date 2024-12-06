@@ -3,6 +3,27 @@
 <html>
 <head>
 <title>Super Save Administrator Page</title>
+<%-- Stylesheet section coded with the assistance of Copilot AI https://m365.cloud.microsoft/chat?auth=2 --%>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+</style>
 </head>
 <body>
 
@@ -22,7 +43,7 @@ NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
 try 
 {	
-	out.println("<h3>Administrator Sales Report by Day</h3>");
+	out.println("<h2>Administrator Sales Report by Day</h2>");
 	
 	getConnection();
 	Statement stmt = con.createStatement(); 
@@ -48,7 +69,7 @@ finally
 }
 
 try{
-	out.println("<h3>List of All Customers</h3>");
+	out.println("<h2>List of All Customers</h2>");
 
 	getConnection();
 	Statement stmt = con.createStatement(); 
@@ -68,7 +89,7 @@ try{
 	}
 	out.println("</table>");
 
-	out.println("<h3>Sales Report by Day Bar Graph</h3>");
+	out.println("<h2>Sales Report by Day Bar Graph</h2>");
 
 	// Bar graph created, and printed out, with the assistance of Copilot AI
 	out.println("<img src=\"img/daily_purchases.png\" alt=\"Daily Purchases Bar Chart\" />");

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <!-- Create Account Page Coded by Copilot AI -->
+
     <title>Super Save Account Creation</title>
     <script>
         function validateForm() {
@@ -44,6 +47,8 @@
 <%@ include file="jdbc.jsp" %>
 <h4>* = Mandatory Entry Field</h4>
 
+<!-- Create Account Page Coded by Copilot AI -->
+
 <form action="createAccount.jsp" method="post" onsubmit="return validateForm()">
     <label for="firstName">First Name: *</label>
     <input type="text" id="firstName" name="firstName" required><br><br>
@@ -80,6 +85,8 @@
     
     <input type="submit" value="Create Account">
 </form>
+
+<!-- Create Account Page Coded by Copilot AI -->
 
 <%
     if (request.getMethod().equalsIgnoreCase("post")) {

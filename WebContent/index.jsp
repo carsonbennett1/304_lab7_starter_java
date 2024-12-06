@@ -4,7 +4,7 @@
 <!-- H1 and H2 style coded by Copilot AI-->
 <style>
 body {
-	background-image: url("img/background.jpg");
+	background-image: url("img/background.webp");
 }
 h1, h2 {
             border: 2px solid #000; /* Black border */
