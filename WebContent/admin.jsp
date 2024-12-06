@@ -49,6 +49,8 @@ tr:hover {
 <h2>
 	Administrator Home 
 	<a href="addProduct.jsp" class="add-link">Add New Product</a>
+	<a href="updateProduct.jsp" class="add-link">Update Product</a>
+	<a href="deleteProduct.jsp" class="add-link">Delete Product</a>
 </h2>
 	
 
