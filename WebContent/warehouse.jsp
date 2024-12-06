@@ -4,7 +4,7 @@
 <title>Super Save Warehouse</title>
 <%@ include file="header.jsp" %>
 
-<%-- Stylesheet section coded with the assistance of Copilot AI https://m365.cloud.microsoft/chat?auth=2 --%>
+<!-- Stylesheet section coded with the assistance of Copilot AI -->
 <style>
     table {
         width: 100%;
@@ -43,7 +43,7 @@ try{
     stmt.execute("USE orders");
     ResultSet rst = stmt.executeQuery(sql);
 
-    // Color styles and Quantity Color changing coded with the assistance of Copilot AI https://m365.cloud.microsoft/chat?auth=2
+    // Color styles and Quantity Color changing coded with the assistance of Copilot AI
 
     out.println("<h3><span style='color: rgb(255, 162, 0);'>Amber Items are Low Quantity</span></h3>");
     out.println("<h3><span style='color: red;'>Red Items Have NO Quantity</span></h3>");

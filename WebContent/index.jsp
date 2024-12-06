@@ -5,6 +5,7 @@
 <style>
 body {
 	background-image: url("img/background.webp");
+        background-size: cover;
 }
 h1, h2 {
             border: 2px solid #000; /* Black border */
