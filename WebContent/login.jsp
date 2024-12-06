@@ -30,8 +30,10 @@ if (session.getAttribute("loginMessage") != null)
 <br/>
 <input class="submit" type="submit" name="Submit2" value="Log In">
 </form>
-
 </div>
+
+<h3 align="center"><a href="index.jsp">Return Home</a></h3>
+
 
 </body>
 </html>
