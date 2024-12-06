@@ -11,7 +11,7 @@ h1, h2 {
             padding: 10px; /* Space inside the border */
             background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
             text-align: center; /* Center align text */
-            margin: 20px auto; /* Center align the box */
+            margin: 10px auto; /* Center align the box */
             width: fit-content; /* Adjust width to fit content */
         }
 </style>
@@ -31,13 +31,11 @@ h1, h2 {
 
 <h2 align="center"><a href="warehouse.jsp">Warehouse Info</a></h2>
 
-<h2 align="center"><a href="login.jsp">Login</a></h2>
-
 <h2 align="center"><a href="createAccount.jsp">Create Account</a></h2>
 
 <h2 align="center"><a href="customer.jsp">Customer Info</a></h2>
 
-<h2 align="center"><a href="logout.jsp">Log out</a></h2>
+<h2 align="center"><a href="login.jsp">Login</a> - <a href="logout.jsp">Log Out</a></h2>
 
 <%
 	String userName = (String) session.getAttribute("authenticatedUser");
