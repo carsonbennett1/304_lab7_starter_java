@@ -124,7 +124,7 @@
 <body>
 
 <!-- Add new product file coded by ChatGPT
- (i.e. <form> and <% ... %> sections): 
+ (i.e. <form> and <% %> sections): 
  https://chatgpt.com/share/67536ab8-21d8-8005-b8e8-af1a88e50402 
  -->
 
@@ -156,7 +156,7 @@
     </table>
 </form>
 
-<!-- <% ... %> section code and server side validation coded by 
+<!-- (<% %>) section code and server side validation coded by 
  ChatGPT: https://chatgpt.com/share/6753826a-19d8-8005-8365-02d51d16741e 
  -->
 <%

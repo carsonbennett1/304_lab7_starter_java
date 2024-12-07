@@ -68,9 +68,9 @@ try
  		// ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26 ****
 
 		out.println("<h3><a href=\"addcart.jsp?id="+prodId+ "&name=" + rst.getString(2)
-								+ "&price=" + rst.getDouble(3)+"\" class="add-link">Add to Cart</a></h3>");		
+								+ "&price=" + rst.getDouble(3)+"\" class=\'add-link\'>Add to Cart</a></h3>");		
 		
-		out.println("<h3><a href=\"listprod.jsp\" class="add-link">Continue Shopping</a>");
+		out.println("<h3><a href=\"listprod.jsp\" class=\"add-link\">Continue Shopping</a>");
 	}
 } 
 catch (SQLException ex) {

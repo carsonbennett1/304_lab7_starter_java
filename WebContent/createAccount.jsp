@@ -96,7 +96,7 @@
     <input type="submit" value="Create Account">
 </form>
 
-<!-- <% ... %> section coded by Copilot AI -->
+<!-- (<%  %>) section coded by Copilot AI -->
 
 <%
     if (request.getMethod().equalsIgnoreCase("post")) {
