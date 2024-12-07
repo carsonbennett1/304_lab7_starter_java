@@ -163,7 +163,13 @@ INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Wind
 INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('MSI G255F',5,'Screen Size: 24.5',109.99);
 INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Sceptre E205W-16003R',5,'Screen Size: 19.5',50.99);
 INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Montech XR',6,'Black',70.99);
-INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('NZXT H9 Flow',6,'Black',129.99);
+INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('NZXT H9 Flow',6,'White',129.99);
+INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Corsair RM650 (2023)',7,'650W',87.99);
+INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Corsair RM1000e (2023)',7,'1000W',157.99);
+INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Logitech K120',8,'Standard',12.99);
+INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Razor Huntsman V3 Pro',8,'Gaming',199.99);
+INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Logitech G Pro',8,'Optical',34.99);
+INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Logitech Z623',8,'42W',116.99);
 
 
 INSERT INTO warehouse(warehouseName) VALUES ('Main warehouse');
@@ -229,3 +235,9 @@ UPDATE Product SET productImageURL = 'img/h.jpg' WHERE ProductId = 9;
 UPDATE Product SET productImageURL = 'img/i.jpg' WHERE ProductId = 10;
 UPDATE Product SET productImageURL = 'img/j.jpg' WHERE ProductId = 11;
 UPDATE Product SET productImageURL = 'img/k.jpg' WHERE ProductId = 12;
+UPDATE Product SET productImageURL = 'img/l.jpg' WHERE ProductId = 13;
+UPDATE Product SET productImageURL = 'img/m.jpg' WHERE ProductId = 14;
+UPDATE Product SET productImageURL = 'img/n.jpg' WHERE ProductId = 15;
+UPDATE Product SET productImageURL = 'img/o.jpg' WHERE ProductId = 16;
+UPDATE Product SET productImageURL = 'img/p.jpg' WHERE ProductId = 17;
+UPDATE Product SET productImageURL = 'img/q.jpg' WHERE ProductId = 18;
