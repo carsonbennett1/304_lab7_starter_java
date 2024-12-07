@@ -64,9 +64,8 @@ try
 			out.println("<img src=\"displayImage.jsp?id="+prodId+"\">");	
 		out.println("</table>");
 		
-		<!-- Code for .add-link and class="add-link" genederated by
- 		ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26 
- 		-->
+		// **** Code for .add-link and class="add-link" genederated by
+ 		// ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26 ****
 
 		out.println("<h3><a href=\"addcart.jsp?id="+prodId+ "&name=" + rst.getString(2)
 								+ "&price=" + rst.getDouble(3)+"\" class="add-link">Add to Cart</a></h3>");		

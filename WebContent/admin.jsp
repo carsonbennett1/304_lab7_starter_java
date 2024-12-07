@@ -115,8 +115,8 @@ try{
 
 	out.println("<h3>Sales Report by Day Bar Graph</h3>");
 
-	<!-- Bar graph image created (daily_purchases.png) in img folder, 
-	and printed out, with the assistance of Copilot AI -->
+	// **** Bar graph image created (daily_purchases.png) in img folder, 
+	// and printed out, with the assistance of Copilot AI ****
 
 	out.println("<img src=\"img/daily_purchases.png\" alt=\"Daily Purchases Bar Chart\" />");
 

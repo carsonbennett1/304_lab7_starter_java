@@ -52,9 +52,8 @@ try{
     stmt.execute("USE orders");
     ResultSet rst = stmt.executeQuery(sql);
 
-    <!-- **** Color styles and quantity qolor changing coded by Copilot AI
-    i.e. style='color ...', <span> ... </span> 
-    -->
+    // **** Color styles and quantity qolor changing coded by Copilot AI
+    // i.e. style='color ...', <span> ... </span> ****
 
     out.println("<h3><span style='color: rgb(255, 162, 0);'>Amber Items are Low Quantity</span></h3>");
     out.println("<h3><span style='color: red;'>Red Items Have NO Quantity</span></h3>");
