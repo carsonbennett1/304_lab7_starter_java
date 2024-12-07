@@ -15,7 +15,7 @@ https://stackoverflow.com/questions/35240758/adding-image-as-a-background-in-jsp
  -->
 <style>
 body {
-	background-image: url("img/background.webp");
+	background-image: url("img/bg.jpg");
         background-size: cover;
 }
 h1, h2 {
