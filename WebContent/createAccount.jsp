@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- Code for .add-link and class="add-link" genederated by
+ ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26 
+ -->
+<style>
+.add-link {
+    margin-left: 30px;
+    text-decoration: none;
+    color: blue;
+}
+</style>
 
-    <!-- Create Account Page Coded by Copilot AI -->
+    <!-- Client side validation (i.e. <script> ... </script>) by Copilot AI -->
 
     <title>Super Save Account Creation</title>
     <script>
@@ -47,7 +57,7 @@
 <%@ include file="jdbc.jsp" %>
 <h4>* = Mandatory Entry Field</h4>
 
-<!-- Create Account Page Coded by Copilot AI -->
+<!-- Form section coded by Copilot AI -->
 
 <form action="createAccount.jsp" method="post" onsubmit="return validateForm()">
     <label for="firstName">First Name: *</label>
@@ -86,7 +96,7 @@
     <input type="submit" value="Create Account">
 </form>
 
-<!-- Create Account Page Coded by Copilot AI -->
+<!-- <% ... %> section coded by Copilot AI -->
 
 <%
     if (request.getMethod().equalsIgnoreCase("post")) {
@@ -138,8 +148,10 @@
         }
     }
 %>
-
-<h3><a href="index.jsp">Return Home</a></h3>
+<!-- Code for .add-link and class="add-link" genederated by
+ ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26 
+ -->
+<h3><a href="index.jsp" class="add-link">Return Home</a></h3>
 
 </body>
 </html>

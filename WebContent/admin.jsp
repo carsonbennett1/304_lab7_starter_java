@@ -11,7 +11,8 @@
  coded with the assistance of Copilot AI  -->
 
 <!-- Stylesheet section featuring .add-link and .add-link:hover coded by
- ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26 -->
+ ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26 
+ -->
 
 <style>
 table {
@@ -45,7 +46,9 @@ tr:hover {
 </head>
 <body>
 
-<!--H2 tag format coded by ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26-->
+<!--H2 tag format coded by ChatGPT: 
+https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26
+-->
 <h2>
 	Administrator Home 
 	<a href="addProduct.jsp" class="add-link">Add New Product</a>
@@ -112,8 +115,8 @@ try{
 
 	out.println("<h3>Sales Report by Day Bar Graph</h3>");
 
-	// *** Bar graph image created (daily_purchases.png) in img folder, 
-	// and printed out, with the assistance of Copilot AI ***
+	<!-- Bar graph image created (daily_purchases.png) in img folder, 
+	and printed out, with the assistance of Copilot AI -->
 
 	out.println("<img src=\"img/daily_purchases.png\" alt=\"Daily Purchases Bar Chart\" />");
 

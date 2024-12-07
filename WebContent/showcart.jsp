@@ -9,6 +9,15 @@
 <html>
 <head>
 <title>Your Shopping Cart</title>
+<!-- Code for .add-link and class="add-link" genederated by
+ ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26 
+ -->
+<style>
+.add-link {
+    text-decoration: none; /* Optional: Removes the underline */
+    color: blue; /* Optional: Sets the link color */
+}
+</style>
 </head>
 <body>
 
@@ -34,7 +43,6 @@ if (productList == null)
 }
 else
 {
-	//productList.remove(custId)
 	NumberFormat currFormat = NumberFormat.getCurrencyInstance(Locale.US);
 
 	out.println("<h1>Your Shopping Cart</h1>");
@@ -87,13 +95,22 @@ else
 			+"<td align=\"right\">"+currFormat.format(total)+"</td></tr>");
 	out.println("</table>");
 
-	out.println("<h3><a href=\"checkout.jsp\">Check Out</a></h3>");
+	<!-- Code for .add-link and class="add-link" genederated by
+ 	ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26 
+ 	-->
+
+	out.println("<h3><a href=\"checkout.jsp\" class="add-link">Check Out</a></h3>");
 }
 %>
 
-<h3><a href="listprod.jsp">Return to Shopping Section</a></h3>
+<!-- Code for .add-link and class="add-link" genederated by
+ ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26 
+ -->
 
-<!-- Clear cart button coded with the assistance of Copilot AI-->
+<h3><a href="listprod.jsp" class="add-link">Return to Shopping Section</a></h3>
+
+<!-- Clear cart button coded by Copilot AI-->
+
 <form action="showcart.jsp" method="post">
     <input type="hidden" name="clearCart" value="true">
     <input type="submit" value="Clear Cart">

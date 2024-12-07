@@ -2,6 +2,17 @@
 <html>
 <head>
 <title>Login Screen</title>
+
+<!-- Code for .add-link and class="add-link" genederated by
+ ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26 
+ -->
+
+<style>
+.add-link {
+    text-decoration: none; /* Optional: Removes the underline */
+    color: blue; /* Optional: Sets the link color */
+}
+</style>
 </head>
 <body>
 
@@ -32,7 +43,10 @@ if (session.getAttribute("loginMessage") != null)
 </form>
 </div>
 
-<h3 align="center"><a href="index.jsp">Return Home</a></h3>
+<!-- Code for .add-link and class="add-link" genederated by
+ ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26 
+ -->
+<h3 align="center"><a href="index.jsp" class="add-link">Return Home</a></h3>
 
 
 </body>

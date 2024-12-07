@@ -6,6 +6,15 @@
 <html>
 <head>
 <title>Super Save Product Information</title>
+<!-- Code for .add-link and class="add-link" genederated by
+ ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26 
+ -->
+<style>
+.add-link {
+    text-decoration: none; /* Optional: Removes the underline */
+    color: blue; /* Optional: Sets the link color */
+}
+</style>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -55,11 +64,14 @@ try
 			out.println("<img src=\"displayImage.jsp?id="+prodId+"\">");	
 		out.println("</table>");
 		
+		<!-- Code for .add-link and class="add-link" genederated by
+ 		ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26 
+ 		-->
 
 		out.println("<h3><a href=\"addcart.jsp?id="+prodId+ "&name=" + rst.getString(2)
-								+ "&price=" + rst.getDouble(3)+"\">Add to Cart</a></h3>");		
+								+ "&price=" + rst.getDouble(3)+"\" class="add-link">Add to Cart</a></h3>");		
 		
-		out.println("<h3><a href=\"listprod.jsp\">Continue Shopping</a>");
+		out.println("<h3><a href=\"listprod.jsp\" class="add-link">Continue Shopping</a>");
 	}
 } 
 catch (SQLException ex) {

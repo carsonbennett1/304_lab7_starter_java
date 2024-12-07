@@ -3,8 +3,7 @@
 <head>
 <title>Add New Product</title>
 <!-- Add product style sheet (i.e. body, h2, h4, ... .feedback) 
- all coded by ChatGPT:
- https://chatgpt.com/share/67537db4-d7bc-8005-b27e-69c09c306b06 
+ all coded by ChatGPT: https://chatgpt.com/share/67537db4-d7bc-8005-b27e-69c09c306b06 
  -->
 <style>
     body {
@@ -125,7 +124,7 @@
 <body>
 
 <!-- Add new product file coded by ChatGPT
- (i.e. <form> and <% %> sections): 
+ (i.e. <form> and <% ... %> sections): 
  https://chatgpt.com/share/67536ab8-21d8-8005-b8e8-af1a88e50402 
  -->
 
@@ -144,7 +143,7 @@
      5 = Meat/Poultry, 6 = Seafood, 7 = Confections, 8 = Grains/Cereals]
 </h4>
 
-<!-- Form method changed to onsubmit="return validateForm()" due to
+<!-- Form method onsubmit="return validateForm()" coded due to
  ChatGPT feedback: https://chatgpt.com/share/6753826a-19d8-8005-8365-02d51d16741e 
  -->
 <form method="post" action="addproduct.jsp" onsubmit="return validateForm()">
@@ -157,8 +156,8 @@
     </table>
 </form>
 
-<!-- Server side validation coded by ChatGPT:
- https://chatgpt.com/share/6753826a-19d8-8005-8365-02d51d16741e 
+<!-- <% ... %> section code and server side validation coded by 
+ ChatGPT: https://chatgpt.com/share/6753826a-19d8-8005-8365-02d51d16741e 
  -->
 <%
 if (request.getMethod().equalsIgnoreCase("POST")) {

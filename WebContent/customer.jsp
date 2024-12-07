@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Super Save Customer Page</title>
-<%-- Stylesheet section coded with the assistance of Copilot AI https://m365.cloud.microsoft/chat?auth=2 --%>
+<!-- Stylesheet (i.e. <style> ... </style>) section coded by Copilot AI -->
 <style>
     table {
         width: 100%;

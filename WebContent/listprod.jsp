@@ -132,11 +132,15 @@ try
 		if (color == null)
 			color = "#FFFFFF";
 
-		// Incorporating Math.random() into oldPrice was done with the assistance of Copilot AI
+		<!-- Incorporating Math.random() into oldPrice was done with 
+		the assistance of Copilot AI -->
+
 		Double price = rst.getDouble(3);
 		Double oldPrice = (1 + (Math.random() * 2)) + price;
 		
-		// Adding the 'Original Price' column and strikethrough was coded with the assistance of Copilot AI
+		<!-- Adding the 'Original Price' column and strikethrough was coded 
+		with the assistance of Copilot AI -->
+		
 		out.println("<td><a href=\"product.jsp?id="+id+"\"<font color=\"" + color + "\">" + rst.getString(2) + "</font></td>"
 			+ "<td><font color=\"" + color + "\">" + itemCategory + "</font></td>"
 			+ "<td><font color=\"" + color + "\">" + currFormat.format(price) + "</font></td>"

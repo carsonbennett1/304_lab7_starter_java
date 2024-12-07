@@ -10,6 +10,7 @@
 <h1>Enter Your Customer Details to Complete the Transaction:</h1>
 
 <!-- Styling and Line Breaks Coded With the Assistance of Copilot AI-->
+ 
 <form method="get" action="order.jsp">
 <h3>Customer Id</h3>
 <input type="text" name="customerId" size="50" style="margin-bottom: 10px;"><br>

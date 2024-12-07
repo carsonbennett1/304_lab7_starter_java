@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
-<!--Background Image code link: https://stackoverflow.com/questions/35240758/adding-image-as-a-background-in-jsp -->
+<!--Background Image code link: 
+https://stackoverflow.com/questions/35240758/adding-image-as-a-background-in-jsp 
+-->
 
-<!-- Fit to screen code provided by ChatGPT: https://chatgpt.com/share/67536416-9900-8005-bf45-932e18d3b512 -->
+<!-- Fit to screen code provided by ChatGPT: 
+ https://chatgpt.com/share/67536416-9900-8005-bf45-932e18d3b512 
+ -->
 
 <!-- H1 and H2 style coded by Copilot AI-->
 
-<!-- Code for .add-link and style="add-link" genederated by
+<!-- Code for .add-link and class="add-link" genederated by
  ChatGPT: https://chatgpt.com/share/67537775-0908-8005-b644-bc27ddc6dc26 
  -->
 <style>
